@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výletník ✈️</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Základní nastavení stránky */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* TADY SE NASTAVUJE TEN JEDEN VELKÝ OBRÁZEK */
+            background-color: #e0f2fe; 
+            background-image: url('pozadi.jpg'); /* Název tvého obrázku */
+            background-size: cover; /* Roztáhne obrázek přes celou šířku i výšku */
+            background-position: center center; /* Vycentruje obrázek */
+            background-attachment: fixed; /* Obrázek se nebude scrollovat s textem */
+
+            color: #1e293b;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        /* --- HLAVIČKA (Zúžená na výšku, přes celou šířku) --- */
+        header {
+            background-color: rgba(14, 165, 233, 0.95); 
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem; /* ZDE JE ZMĚNA - zúženo z 4rem na 2rem */
+            width: 100%; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 5rem; 
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        /* --- STŘEDOVÁ KARTA S OBSAHEM (Mléčné sklo) --- */
+        .main-wrapper {
+            background-color: rgba(255, 255, 255, 0.93); 
+            max-width: 1000px;
+            margin: 3rem auto 4rem auto; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+            padding: 3rem 0; 
+        }
+
+        /* --- ÚVODNÍ TEXT --- */
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto 4rem auto;
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #334155;
+            padding: 0 2rem;
+        }
+
+        /* --- TŘI BOXY --- */
+        .boxes-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 0 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .box {
+            background: white;
+            flex: 1;
+            padding: 2rem 1.5rem;
+            border-radius: 10px;
+            border: 2px solid #bae6fd;
+            text-align: center;
+            box-shadow: 4px 4px 0px #0ea5e9; 
+            transition: transform 0.2s;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+        }
+
+        .box h3 {
+            color: #0284c7;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        /* --- ČÍSLOVANÝ SEZNAM (Manuál) --- */
+        .manual-container {
+            padding: 0 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .manual-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #f1f5f9;
+        }
+
+        .step-number {
+            font-family: 'Caveat', cursive;
+            font-size: 4.5rem;
+            color: #0ea5e9;
+            line-height: 0.8;
+            margin-right: 2rem;
+            min-width: 60px;
+        }
+
+        .step-text h4 {
+            font-size: 1.5rem;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            font-weight: 900;
+        }
+
+        .step-text p {
+            font-size: 1.1rem;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            background-color: #fef08a;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #854d0e;
+        }
+
+        /* --- PATIČKA --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #cbd5e1;
+            background-color: #0f172a; 
+            width: 100%;
+        }
+
+        /* Responzivita pro menší monitory a mobily */
+        @media (max-width: 768px) {
+            .boxes-container { flex-direction: column; }
+            .manual-step { flex-direction: column; }
+            .step-number { margin-bottom: 1rem; }
+            .main-wrapper { margin: 1rem; padding: 2rem 0; }
+            header h1 { font-size: 4rem; } /* Na mobilu trošku zmenšíme nadpis */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Výletník ✈️</h1>
+    </header>
+
+    <div class="main-wrapper">
+        
+        <section class="intro-text">
+            <p>
+                Vítejte na oficiální stránce maturitního projektu <strong>Výletník</strong>. 
+                Tato mobilní aplikace vznikla s jediným cílem: ušetřit vám hodiny sezení u prohlížeče při hledání cílů pro víkendové výlety. 
+                Díky napojení na umělou inteligenci Google Gemini stačí napsat, na co máte náladu, a aplikace vám obratem sestaví logický itinerář, 
+                který vás pomocí Google Maps dovede od prvního bodu až do cíle.
+            </p>
+        </section>
+
+        <section class="boxes-container">
+            <div class="box">
+                <h3>🤖 AI Plánování</h3>
+                <p>Zadejte volný dotaz (např. "Zajímavé kavárny v Brně") a nechte jazykový model sestavit perfektní trasu přímo pro vás.</p>
+            </div>
+            <div class="box">
+                <h3>📍 Google Maps</h3>
+                <p>Odpadá zdlouhavé přepisování adres. Aplikace dynamicky poskládá URL adresu a otevře hotovou trasu rovnou v navigaci.</p>
+            </div>
+            <div class="box">
+                <h3>💾 Osobní historie</h3>
+                <p>Upravujte si vygenerované trasy, odstraňujte zastávky nebo přidávejte vlastní. Vše si můžete trvale uložit do paměti telefonu.</p>
+            </div>
+        </section>
+
+        <section class="manual-container">
+            <div class="manual-step">
+                <div class="step-number">1.</div>
+                <div class="step-text">
+                    <h4>Inspirujte se u Chatbota</h4>
+                    <p>Na první záložce aplikace stačí napsat vaši představu o výletu. Chatbot požadavek zpracuje a vrátí vám seznam zajímavých míst i s krátkým popisem, abyste věděli, na co se můžete těšit.</p>
+                </div>
+            </div>
+
+            <div class="manual-step">
+                <div class="step-number">2.</div>
+                <div class="step-text">
+                    <h4>Upravte si plán podle sebe</h4>
+                    <p>V záložce "Můj Výlet" uvidíte váš aktuální plán. Můžete vymazat místa, která vás nezaujala, nebo si naopak přes tlačítko přidat třeba oblíbenou restauraci, kterou znáte.</p>
+                </div>
+            </div>
+
+            <div class="manual-step">
+                <div class="step-number">3.</div>
+                <div class="step-text">
+                    <h4>Sdílení informací vs. Sdílení navigace</h4>
+                    <p>
+                        V naší aplikaci slouží tlačítko pro sdílení k rozeslání <span class="highlight">textového itineráře</span> (čistý seznam názvů míst a jejich popisků), který můžete poslat třeba rodině do WhatsAppu, ať vědí, jaký je plán. 
+                        <br><br>
+                        Pokud ale chcete kamarádům nasdílet <span class="highlight">přesnou GPS navigační trasu na mapě</span>, stačí v naší aplikaci kliknout na tlačítko "🗺️ Jet". Jakmile se vám trasa vykreslí přímo v aplikaci Google Maps, využijete její nativní funkci pro sdílení trasy.
+                    </p>
+                </div>
+            </div>
+
+            <div class="manual-step">
+                <div class="step-number">4.</div>
+                <div class="step-text">
+                    <h4>Ukládejte na později</h4>
+                    <p>Máte vymyšlený super výlet, ale jedete až za měsíc? Žádný problém. Ikonou diskety si trasu pojmenujete a uložíte do bezpečí lokálního úložiště vašeho telefonu. Kdykoliv se k ní pak můžete vrátit na první záložce.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Vyšší odborná škola a Střední průmyslová škola, Jičín | Maturitní práce 2025/2026</p>
+        <p style="margin-top: 5px; color: #94a3b8;">Autor: Ondřej Kracík | Obor: Informační technologie</p>
+    </footer>
+
+</body>
+</html>
