@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
-        /* Základní nastavení stránky */
         * {
             margin: 0;
             padding: 0;
@@ -18,23 +17,22 @@
         }
 
         body {
-            /* TADY SE NASTAVUJE TEN JEDEN VELKÝ OBRÁZEK */
             background-color: #e0f2fe; 
-            background-image: url('pozadi.jpg'); /* Název tvého obrázku */
-            background-size: cover; /* Roztáhne obrázek přes celou šířku i výšku */
-            background-position: center center; /* Vycentruje obrázek */
-            background-attachment: fixed; /* Obrázek se nebude scrollovat s textem */
+            background-image: url('pozadi.jpg'); 
+            background-size: cover; 
+            background-position: center center; 
+            background-attachment: fixed; 
 
             color: #1e293b;
             font-family: 'Nunito', sans-serif;
         }
 
-        /* --- HLAVIČKA (Zúžená na výšku, přes celou šířku) --- */
+
         header {
             background-color: rgba(14, 165, 233, 0.95); 
             color: white;
             text-align: center;
-            padding: 2rem 1rem; /* ZDE JE ZMĚNA - zúženo z 4rem na 2rem */
+            padding: 2rem 1rem; 
             width: 100%; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
@@ -46,7 +44,6 @@
             font-weight: 700;
         }
 
-        /* --- STŘEDOVÁ KARTA S OBSAHEM (Mléčné sklo) --- */
         .main-wrapper {
             background-color: rgba(255, 255, 255, 0.93); 
             max-width: 1000px;
@@ -56,7 +53,6 @@
             padding: 3rem 0; 
         }
 
-        /* --- ÚVODNÍ TEXT --- */
         .intro-text {
             max-width: 800px;
             margin: 0 auto 4rem auto;
@@ -66,9 +62,7 @@
             color: #334155;
             padding: 0 2rem;
         }
-
-        /* --- TŘI BOXY --- */
-        .boxes-container {
+     .boxes-container {
             display: flex;
             justify-content: space-between;
             gap: 2rem;
@@ -98,7 +92,6 @@
             font-weight: 900;
         }
 
-        /* --- ČÍSLOVANÝ SEZNAM (Manuál) --- */
         .manual-container {
             padding: 0 2rem;
             margin-bottom: 2rem;
@@ -145,7 +138,6 @@
             color: #854d0e;
         }
 
-        /* --- PATIČKA --- */
         footer {
             text-align: center;
             padding: 2rem;
@@ -154,13 +146,12 @@
             width: 100%;
         }
 
-        /* Responzivita pro menší monitory a mobily */
         @media (max-width: 768px) {
             .boxes-container { flex-direction: column; }
             .manual-step { flex-direction: column; }
             .step-number { margin-bottom: 1rem; }
             .main-wrapper { margin: 1rem; padding: 2rem 0; }
-            header h1 { font-size: 4rem; } /* Na mobilu trošku zmenšíme nadpis */
+            header h1 { font-size: 4rem; } 
         }
     </style>
 </head>
